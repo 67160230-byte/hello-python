@@ -43,3 +43,15 @@ python build_site.py
 - เพิ่มไฟล์ `test_*.py` ภายใน tests ได้โดยไม่ต้องแก้ workflow เพราะ pytest ค้นหา tests ให้เอง
 
 ผลตรวจในเครื่อง: 22 tests ผ่าน, coverage 97.30% (Python 3.12); GitHub Actions กำหนด Python 3.13 ตามคู่มือ
+
+## หลักฐานการทดลอง
+
+1. [รอบแรก: test และ deploy ผ่าน](https://github.com/67160230-byte/hello-python/actions/runs/39032989150) — 4 คน ค่าเฉลี่ย 67.25
+2. [ทดลอง Lint แดง](https://github.com/67160230-byte/hello-python/actions/runs/39033041000) — ใส่ import ที่ไม่ได้ใช้ ทำให้ job test ล้มเหลวและ deploy ถูกข้าม
+3. [แก้ Lint และเพิ่มชูใจ 91 คะแนน](https://github.com/67160230-byte/hello-python/actions/runs/39033090737) — เว็บอัปเดตเป็น 5 คน ค่าเฉลี่ย 72.00
+4. [ทดลองคะแนนผิด 850](https://github.com/67160230-byte/hello-python/actions/runs/39033138838) — ตรวจสอบว่าข้อมูลผิดทำให้ test ไม่ผ่านและไม่เผยแพร่
+5. รุ่นสุดท้ายแก้คะแนนวีณาเป็น 85 — 6 คน ค่าเฉลี่ย 74.17
+
+ทดลองแก้ขอบเขตเกรด `>= 80` เป็น `> 80` ในเครื่องแล้วพบว่า test ของคะแนน 80 ล้มเหลวตามคาด จากนั้นคืนโค้ดที่ถูกต้องก่อนส่งขึ้น GitHub
+
+หมวด 5–8 (Pull Request, Secrets, Matrix และ Self-hosted runner) เป็นบทเสริม ยังไม่ได้ตั้งค่าในโปรเจกต์นี้
