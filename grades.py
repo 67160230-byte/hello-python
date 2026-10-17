@@ -1,4 +1,3 @@
-import os
 def grade(score):
     """Convert a score from 0 to 100 into a letter grade."""
     if not 0 <= score <= 100:
